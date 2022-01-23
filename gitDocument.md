@@ -135,6 +135,11 @@ step4: Add remote
 step5: push code
 -git push origin branchName -> push code lên branch name
 
+step6: merge branch
+-git merge branchName -> merge branchName vào branch
+note: xử lý xung đột 2 branch sửa cùng 1 file(conflict)
+commit bra1 -> commit bra2 -> git merge branch1(merge 1 vào2) [xung đột 2 branch sửa cùng 1 file]
+fix: branch2 sửa lại file (+sửa branch 1) -> commit => xong
 
 note:câu lệnh cơ bản
 -git branch branchName -> tạo nhánh
@@ -151,11 +156,27 @@ git checkout -b branchName -> tạo nhánh và chuyển sang nhánh đó
 -git commit -m "Message" -> commit code( code vẫn dưới local)
 -git push origin branchName -> đẩy code lên nhánh(origin tên nhánh ta đặt)
 -git pull origin branchName -> pull code from branchName( kéo code mới nhất của nhánh đó)
-step2: git checkout -b tagname
-- tạo nhánh mới có tên là tagname
+
+<!-- git có 3 trạng thái -->
+-commited: data an toàn đã commit thành công
+-staged: đã add chưa commit
+-modified: chưa add
 
 -git reset ( reset lại file hoặc thư mục về ban đầu)
 <!-- --------------------------------- -->
 -cách push data lên github
 --th1: branch mới tạo:
-    tạo branch trên local thì trên github ko tồn tại -> sử dụng thêm 1 tham số kèm theo 
+    -tạo branch trên local thì trên github ko tồn tại -> sử dụng thêm 1 tham số kèm theo
+    -eg: git push --set-upstream origin branchName
+--th2: branch cũ:
+    --git checkout branchName
+    --git add .
+    --git commit -m "Message"
+    -git push origin branchName
+
+<!-- git: thao tác với thư mục -->
+- cd nameFolder: chuyển sang thư mục
+- ls: list file or floder
+- mkdir nameFolder: tạo folder mới
+- rmdir nameFolder: xóa folder
+- pwd: xem đường dẫn hiện tại
