@@ -32,3 +32,28 @@ break: dừng vòng lặp cho dù loop true
 - getDate(): lấy ngày
 ......
 -setDate(...): thiết lặp ngày
+
+<!-- 3 cách tạo class -->
+-3.1: sử dụng func
+    mỗi func tồn tại biến cục bộ this, đại diện cho chính func. dùng this để khai báo các phương thức, thuộc tính. phải return this để sử dụng từ khóa new khởi tạo đối tượng.
+-3.2 sử dụng object
+    dễ dàng khởi tạo thuộc tính, phương thức. Có thểm thêm ngay tỏng lúc khai báo hoặc lúc khởi tạo
+-3.3 sử dụng singleon Object
+    sử dụng từ khóa new để tạo mới 1 function và không cần return this
+ note: lời kết 
+    c1 hay nhất vì thể hiện rõ đối tượng khai báo 1 lần tạo nhiều đối tượng khác nhau bằng từ kháo new, c2,3 mang tính toàn cục bản chất nó chỉ là 1 đối tượng khi thay đổi thuộc tính nó sẽ lưu lại cho các lần sử dụng tiếp theo
+
+ <!--try catch  -->
+ - là một khối lệnh bắt lỗi, muốn chương trình không bị dừng khi bị một lỗi nào đó
+ - luồng try catch
+ -- bước 1: thực thi trong try
+ -- buwoc2: nếu try xuất hiện lỗi thì nhảy sang catch
+ -- bước 3: nhảy xuống finally dù lỗi hay không
+
+---thow new Error() trong try catch
+tham số e trong catch là một errol object mặc định. 
+ note: 
+ -EvalError: lỗi trong hàm eval
+ -RangeError: nằm ngoài pvi giới hạn của một kiểu dl nào đó
+ -SystaxError: lỗi cú pháp
+ urlError: sử dụng ký tự không hợp lệ trong url
