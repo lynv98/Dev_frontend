@@ -141,4 +141,56 @@ trong class không cần
 - extends dùng để kế thừa từ 1 class
 - overriding in js
 -- phương thức sẽ bị ghi đè
+-- overriding constructor in js
+ tạo constructor ở hàm con bắt buộc phải sử dụng từ khóa supper để gọi tới hàm constructor của lớp cha
+
+<!-- static -->
+- là từ khóa giúp khai báo các phương thức tĩnh và thuộc tính tĩnh trong các class
+- khi kb static không cần dùng từ khó new để khởi tạo đối tượng
+-- static method 
+note: this trong method chính là class
+không thể dùng this gọi phương thức không phải là static
+-- static property
+thuộc tính tĩnh này không thể dùng this gọi giống phương thức được
+ => note: thuộc tính và phương thức in js là duy nhất 
+
+--static extends
+note: lớp con thay đổi static chỉ thay đổi ở lớp con lớp cha không thay đổi static
+        lớp cha thay đổi static lớp con thay đổi theo
+
+<!-- private, protected and public -->
+-private: bảo mật cao nhất, chỉ sử dụng bên trong class, ngoài không được truy cấp
+-protected: bên trong class và class kế thừa
+-public: ở đâu cũng có thể truy cập
+
+--sử dụng protected 
+--- quy ước bắt đầu bằng dâu _
+--- tạo một getter nhưng không tạo setter để bên ngoài class có thể sử dụng, nếu có setter thì không tác dụng
+
+--sử dụng private 
+--- quy ước bứt đầu bằng #
+
+<!-- import and export in js -->
+ -module: là 1 file js có tên ý nghĩa, code phục vụ cho ý nghĩa
+ - chia module là chia từng file giúp code nhanh hơn...
+ - từ khóa export: dùng để kb dữ liệu được chia sẻ, module khác muốn dùng chỉ việc gọi đến. nếu không đặt module thì dữ liệu cục bộ
+
+ - sử dụng lệnh import để gọ dữ liệu từ module khác 
+ -default export module là cách kb dữ liệu  mặc định , trong trường gọi đến không có return default
+ - dùng từ khóa as để đổi tên func hoặc variable
+ - dùng * để import toàn bộ
+
+ <!-- block scope: pvi khối-->
+ - là phạm vi khối, chỉ được sử dụng trong {}
+ - sư dụng từ khóa  let để khai báo biến
+
+ <!-- arrow func -->
+ - cú pháp ví dụ
+ -- có 2 biến
+    var hello = (name, mes) => {...code};
+    hello();
+ --có 1 biến
+    var hello = name => {...code};
+ -- ko có biến
+    var hello = () => {...code};
 
