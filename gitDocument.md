@@ -192,3 +192,8 @@
     - mkdir nameFolder: tạo folder mới
     - rmdir nameFolder: xóa folder
     - pwd: xem đường dẫn hiện tại
+
+    delete branch 
+    - bước 1: delete branch on remote: git push origin --delete branchName
+    - bước 2: delete branch on local: git branch - d branchName
+    
