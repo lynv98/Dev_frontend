@@ -25,3 +25,38 @@ class user{
 let user1 = new user("lan", 32);
 user1.showName();
 
+/// class 
+class myClass{
+    // hàm khởi tạo
+    constructor(...args) {
+        this.arg = args[0];
+    }
+    //các phương thức
+    method(){
+        //code
+    }
+}
+
+// ví dụ class sử dụng get và set 
+class User {
+    constructor(name) {
+        // Tự động gọi đến hàm set name
+        this.name = name;
+    }
+ 
+    get name() {
+        return "Tên bạn là " + this._name;
+    }
+ 
+    set name(value) {
+        if (value.length < 4) {
+            alert("Vui lòng nhập tên dài hơn 4 kí tự");
+            return;
+        }
+        this._name = value;
+    }
+}
+ 
+let user5 = new User("Cường");
+console.log(user5.name);// Tên bạn là Cường
+ 

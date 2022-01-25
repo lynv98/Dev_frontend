@@ -78,3 +78,67 @@ tham số e trong catch là một errol object mặc định.
 -- Nguyên tắc
 -> phải chắc chắn tham số truyền vào là 1 func
 -> cận thận với this khi callback nằm trong object
+
+ // lỗi this trong object khi sử dụng call back
+ // cách fix lỗi trên
+ // Trước đây
+callback(var1, var2, ...);
+ 
+// Bây giờ
+callback.apply(callbackObject, [var1, var2, ... ]);
+
+<!-- bind() -->
+khi sử dụng closure lưu ý đến this và dùng bind để khắc phục
+
+<!-- call() & apply() -->
+-1 call: dùng để thực thi 1 hàm nào đó với các tham số truyền vào, hàm này được tích hợp sẵn trong các đối tượng là func
+note: 
+-- dùng hàm call để gán gia trị cho hàm khởi tạo( nếu muốn tạo nhiều đối tượng có hàm khởi tạo giống nhau thì hãy sử dụng hàm call để thực hiện, chương trình gọn hơn)
+-- dùng hàm call để gọi hàm anonymous
+-- dùng call để đổi giá trị của this
+=> tham số đầu vào của hàm call() là đối tượng this, tiếp theo là tham số của hàm cần gọi
+
+- 2 apply(): 
+=> tham số đầu vào cảu hàm apply() là đối tượng this, tiếp theo là một mảng thao số đầu vào
+
+<!-- anonymous func -->
+- là hàm ẩn danh, được sinh ra đúng thời điểm chạy của chương trình
+- được khai báo bằng cách sử dụng toán tử thay vì cú pháp  định nghĩa thông thường.
+- đối với anonumous lưu ý hàm khi gọi trước hoặc sau, gọi trước không được
+- anonumous là hàm không tên, phải có () mới sử dụng được
+
+<!-- this -->
+- this là từ khóa để trỏ đến đối tượng hiện tại, qua đó có thể truy cập đến phương thức, thuộc tính đối tượng đó.
+điều kiện phải đặt this trong phạm vi đối tượng, ngoài cùng window
+- sử dụng this
+-- TH1:nếu không bật chế độ strict mode: this là một biến toàn cục( cao nhất window), dể dàng bổ sung thuộc tính cho window
+-- TH2: nếu bật strict mode: this trong hàm là một biến chưa được định nghĩa => undefined 
+     thêm thuộc tính -> lỗi vì this ở đây không phải là object
+- note: nếu như hàm khởi tạo this chính là instance
+    anonymous func không tồn tại this
+
+<!-- contructor -->
+- là một kỹ thuật giúp ta có thểm thêm phương thức và thuộc tính cho một func, lúc này func hoạt động như một đối tượng
+-contructor là một function
+-- có thể xem func là một object
+-- có thể thêm thuộc tính và phương thức
+-- có thể dùng từ khóa new để khởi tạo cho nhiều đối tượng
+- contructor với func
+-> khác với object không thể thêm thuộc tính từ bên ngoài 
+-contructor là một class
+
+<!-- class -->
+- class tạo ra lớp mẫu cho trương trình để thể hiện các đối tượng. qua đó thể thêm hành động, thuộc tính của đối tượng vào trong lớp
+
+note:
+trong object cần dấu phẩy để ngăn cách thuộc tính
+trong class không cần
+ - getters và setters  trong class
+ -- getters là những hàm có nhiệm vụ lấy giá trị của thuộc tính 
+ -- setters có nhiệm vụ gán giá trị cho các thuộc tính 
+<!-- extend -->
+- dùng để khai báo một lớp được kế thừa từ một lớp khác
+- extends dùng để kế thừa từ 1 class
+- overriding in js
+-- phương thức sẽ bị ghi đè
+
