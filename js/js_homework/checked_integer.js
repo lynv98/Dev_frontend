@@ -12,4 +12,3 @@ let checkedInteger = (value) =>{
 
 console.log(checkedInteger(4))
 
-/

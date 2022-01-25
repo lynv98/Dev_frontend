@@ -57,3 +57,24 @@ tham số e trong catch là một errol object mặc định.
  -RangeError: nằm ngoài pvi giới hạn của một kiểu dl nào đó
  -SystaxError: lỗi cú pháp
  urlError: sử dụng ký tự không hợp lệ trong url
+
+ <!-- closuse -->
+- là một làm được tạo ra từ bên trong một hàm khác, nó có thể sử dụng biến toàn cục, biến cục bộ của hàm cha  và biến cục bộ của chính nó. 
+- scope: là phạm vi biến, nơi mà biến tồn tại 
+- các biến bên trong hàm sẽ kết thúc khi hàm đó chạy xong
+- Closure có thể sd biến cục bộ, biến hàm cha và biến chính nó.
+-note: nó return lại 1 func
+- trong strict thì con trỏ this sẽ là undified , còn ko là window
+-closure có thể thay đổi giá trị biến toàn cục, cục bộ
+-độ ưu tiên các biến trong closure
+-- trong closure > trong cha > toàn cục
+
+<!-- call balck -->
+- hàm call balck là một hàm được gọi bởi một hàm khác 
+- note: truyền callback func vào các hàm xử lý sự kiện, hàm xử lý bất đồng bộ nào đó.
+- ví dụ: settimeout(function){ callback func}, milisecond);
+ khác nhau callback và closure
+ -> closure được truyền vào thông qua tham số
+-- Nguyên tắc
+-> phải chắc chắn tham số truyền vào là 1 func
+-> cận thận với this khi callback nằm trong object
