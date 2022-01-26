@@ -193,4 +193,143 @@ note: lớp con thay đổi static chỉ thay đổi ở lớp con lớp cha kh�
     var hello = name => {...code};
  -- ko có biến
     var hello = () => {...code};
+-note: nếu arrow trong hàm thì phải bao ()
+- có thể sử dụng arrow func thay bind()
+
+<!-- destructuring assignment -->
+- tách phần tử array hoặc object thành nhiều biến
+
+<!-- defalt parameter -->
+- là giá trị mặt định của tham số khi truyền vào func
+- ví dụ: function sayHi(name: 'nguyen van a '){
+    //code
+    return name;
+}
+
+<!-- rest parameter -->
+- sử dụng dấu ... để khai báo các tham số còn lại
+- ví dụ: var domain = (para1, para2, ...other) => {
+    ccl(para1);
+    ccl(para2);
+    ccl(other);
+};
+
+domain(a, b, c, d, e);
+
+<!-- const -->
+- là hằng số, khai báo phải gán giá trị và không thay đổi giá trị cho biến đó nữa.
+- là một block scope
+
+<!-- kiểu dữ liệu set-->
+- là kiểu dữ liệu với các giá trị truyền vào tùy ý
+- khởi tạo: let set = new Set();
+- thêm phần tử: set.add(...);
+- xóa phần tử: set.delete(...);
+- kiểm tra tồn tại: set.has(value);
+- tổng số ptu: set.size;
+- xóa toàn bộ phần tử: set.clear();
+
+-Mapping: là một hàm tích hợp sẵn array chức năng thiết lập giá trị cho phần tử trong mỗi vòng lặp
+-filtering: trả về true nếu phần tử được chọn, flase nếu phần tử không được chọn
+
+- chuyển đổi set và array
+ví dụ: let numbers = set([1, 2, 3]);
+chuyển set -> arr
+let arr = [...numbers];
+chuyển arr -> set
+let set = new Set(ar_numbers);
+
+<!-- kiểu dữ liệu Map -->
+- tương tự set nhưng có cấu trúc dạng key: value;. set thì chỉ có value
+ví dụ: let map = new Map([
+     ["Name", "Nguyen Van Cuong"],
+     ["Email", "thehalfheart@gmail.com"],
+     ["Website", "freetuts.net"]
+]);
+
+<!-- kiểu dữ liệu weakMap -->
+- là một kiểu dữ liệu giống Map tồn tại 2 tham số key, value. 
+- weakMap truyền vào là 1 biến, biến này object(class, func, obj)
+- còn Map thiết lập key là chuôi, number, obj đều được
+ví dụ: 
+// Khởi tạo
+var weak = new WeakMap();
+ 
+// Danh sách key 
+var key1 = {};
+var key2 = {};
+ 
+// Thêm phần tử
+weak.set(key1, "Giá trị 01");
+weak.set(key2, "Giá trị 02");
+ 
+// Lấy giá trị
+console.log(weak.get(key1)); // Giá trị 01
+console.log(weak.get(key2)); // Giá trị 02
+ 
+// Kiểm tra tồn tại
+var other_key = {};
+console.log(weak.has(key1)); // true
+console.log(weak.has(other_key)); // false
+ 
+// Xóa phần tử
+weak.delete(key1);
+console.log(weak.get(key1)); // Undefined
+
+<!-- kiểu dữ liệu weakSet -->
+- tương tự set nhưng giá trị truyền vào phải là obj
+
+<!-- symbol -->
+ 
+<!-- synchronous và Asyschronous -->
+- sync là xử lý đồng bộ. 
+-- bước 1 xong -> bước 2. chương trình 1 xong -> chương trình 2.
+--sinh ra trạng thái chờ.
+--- ưu điểm: chạy đúng quy tắc, và không mắc lỗi về tiến trình, có lỗi biết ngay ở đâu
+--- nhược điểm: sinh ra trạng thái chờ không cần thiết ở 1 số th => bộ nhớ tràn
+
+-Async: chương trình có thể nhảy qua bước nào đó
+-- chương trình không chặt chẽ, không có quy trình -> quản lý khó khăn
+-- ưu điểm: xử lý nhiều cv cùng lúc
+-- nhược điểm: chương trình ko chặt chẽ và quản lý khó khăn
+
+- Ajax Asynchronous
+-- là kỹ thuật xử lý bất đồng bộ
+
+<!-- Promise -->
+- sinh ra để xử lý kết quả của một hành động cụ thể, cụ thể thành công hoặc thất bại 
+- khi promise tạo ra sẽ có 3 trạng thái 
+-- fulfilled: -> thành công
+-- Rejected: thất bại
+-- pending: -> đang chờ xử lý 
+
+-- ví dụ
+    // tạo ra 1 promise 
+    var promise = new Promise(callback);
+    callback là 1 func có 2 tham sô truyền vào 
+    -- resolve: hàm callback cho hành động thành công
+    -- reject: thất bại
+
+-- thenable in promise
+là phương thức ghi nhận kết quả ở trạng thái
+
+-note: nếu có cả resolve và reject ở promise chỉ có tác dụng với khai báo đầu tiên
+
+- catch in Promise
+nhảy vào catch để xử lý
+- có cả callback and catch => vào callback vào catch
+==> kết luận: promise là gói để quán lý một hành động Async
+
+3 trạng thái của promise
+-pendding: là trạng thái khi khởi tạo 1 promise nhưng chưa thiết lập kết quả cho nó( chưa sử dụng: resolve, reject)
+-Fulfilled (resolve) promise thành công khi sử dụng resolve
+- Rejected (reject) promise thất bại khi sử dụng reject. khi sử dụng reject bắt buộc phải khai báo hành động cho nó (then hoặc catch)
+- then có thể sử dụng nhiều lần 
+- nếu then thứ nhất return về reject promise  -> then tiếp theo sẽ không chạy => catch sẽ được chạy
+ - note: gặp reject vào thẳng catch không qua then nữa
+ 
+ <!-- tính năng mới trên ES7 -->
+ - toán tử lũy thừu: ** hoặc Math.pow();
+ - array.include(value): kiểm tra val có nằm trong mảng
+ - ... để tách các phần tử còn lại gọi là spread
 

@@ -17,4 +17,33 @@ human.showName();
 human.name = 'abc';
 human.showName();
 
-
+// private
+class Human{
+    // Protected
+    #name = ""
+     
+    constructor(name){
+        // Lệnh này đúng, vì nó là lớp con 
+        // nên được phép truy cập đến thuộc tính private
+        this.#name = name;
+    }
+     
+    // Public
+    sayHi(){
+        // Lệnh này đúng, vì đang truy cập trong lớp
+        console.log(`Xin chào, tôi là ${this.#name}`);
+    }
+}
+ 
+class Student extends Human{
+    sayGoodbye(){
+        // Lệnh này sai, vì #name là private
+        console.log(`${this.#name} tạm biệt mọi người nhé`);
+    }
+}
+ 
+let cuong = new Student("Cường");
+ 
+ 
+cuong.sayHi();  // Lệnh này đúng
+cuong.#name;    // Lệnh này sai
