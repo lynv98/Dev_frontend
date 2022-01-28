@@ -333,3 +333,48 @@ nhảy vào catch để xử lý
  - array.include(value): kiểm tra val có nằm trong mảng
  - ... để tách các phần tử còn lại gọi là spread
 
+<!-- strict mode -->
+- khi bật thì không thể cancel
+- strict mode nằm ở đầu file, hàm   
+
+<!-- viết comment -->
+- what: comment là phần giải thích thêm cho code hiện tại
+- when: khi có logic code phức tạp 
+- where: trước đoạn code cần giải thích
+- why: để hiểu được tại sao code như thế
+- who: ai là người viết
+=> viết bằng english
+
+<!-- đặt tên biến -->
+true, false --> có thêm tiền tố với prefix: has, is ,show
+đặt tên biến có giá trị
+không đặt tên 1b đằng lưu 1 nẻo
+dùng danh từ
+
+camelcase   student, students   var name, func name
+Uppercase   PI, API_URL         contants
+Pascalcase  Menu, Slidebar, ProductList     class or component
+keybarcase  menu-item   css class name
+
+<!-- đặt tên cho hàm -->
+ dùng english
+ dùng động từ 
+ thường dùng với prefix: create, apdate, add, check, convert, new, map, get...
+-lưu ý
+ - mỗi hàm làm một nhiệm vụ
+ - ngắn dưới 30 dòng co
+ - kiểm tra tính hợp lệ của tham số đầu vào
+ - return kiểu dữ liệu đồng nhất với nhau
+ - có comment cho logic phức tạo
+ - tối đa 3 tham số truyền vào
+
+ <!-- truthy và falsy -->
+ truthy là những giá trị chuyển về boolearn -> true
+ falsy là những giá trị chuyển về boolearn -> false
+
+ <!-- switch case -->
+ sử dụng switch case khi điều kiện tà tập giá trị xác đinh
+ khoảng bao nhiêu đến bao nhiêu thì suer dụng if else
+
+-- kỹ thuật dùng flag để kiểm tra phù hợp thỏa mãn điều kiện nào đó hay không trả về true hoặc false
+
