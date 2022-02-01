@@ -73,3 +73,20 @@ function isPerfectSquare(val) {
     const sqrtNInit = Math.trunc(sqrtN); // lấy phần nguyên thôi
     return sqrtN * sqrtNInit === val;
 }
+
+//v2 không lên sử dụng các ít tầng các tốt, 
+function isPerfectSquare2(val) {
+    if(val > 0) {
+        const sqrtN = Math.sqrt(val);
+        const sqrtNInit = Math.trunc(sqrtN); // lấy phần nguyên thôi
+        return sqrtN * sqrtNInit === val;
+    }
+    return false; 
+}
+
+console.log(isPerfectSquare2(25));
+
+// check, conver time
+function converHourToSeconds(val) {
+    if(val <= 0 )
+}
